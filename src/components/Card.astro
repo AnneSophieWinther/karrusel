@@ -1,15 +1,27 @@
 ---
-const { variant, imgSrc, imgAlt, cardName } = Astro.props;
+const { imgPath, cardName, cardText } = Astro.props;
+import Button from "../components/Button.astro";
+
 ---
 
-<div>
-<img src={imgSrc} alt={imgAlt || "card"} class={variant}/>
-<p class="artist_name">{cardName}</p>
-</div>
+<li class="card">
+<img src={imgPath} alt="" height="410" width="390"/>
+<h3>
+   {cardName}
+ </h3>
+ <p>{cardText}</p>
+ <Button variant="primary">Hej</Button>
+</li>
 
 <style>
-   .artist_name {
-color: white;
+   .card {
+color: rgb(0, 0, 0);
+width: 390px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.5rem;
+font-weight: normal;
    }
+
+
    
 </style>

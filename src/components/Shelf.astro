@@ -1,28 +1,30 @@
 ---
-const { variant, imgSrc, imgAlt, cardName } = Astro.props;
+const { variant, imgPath, imgAlt, cardName } = Astro.props;
 import Card from './Card.astro';
 ---
 
 <div class="shelf-container">
     <Card 
-    variant="album" 
-    imgSrc="/imges/miley.jpeg" 
+    imgPath="/imges/karrusel.jpeg" 
     imgAlt="Artist 2" 
     cardName="Miley album"
+    cardText = About
+
 
     />
   <Card 
-    variant="album" 
-    imgSrc="/imges/miley.jpeg" 
+    imgPath="/imges/karrusel.jpeg" 
     imgAlt="Artist 2" 
     cardName="Bangerz"
+    cardText = About
+
 
   />
   <Card
-    variant="album" 
-    imgSrc="/imges/miley.jpeg" 
+    imgPath="/imges/karrusel.jpeg" 
     imgAlt="Artist 2" 
     cardName="Bangerz"
+    cardText = About
   />
 </div>
 
