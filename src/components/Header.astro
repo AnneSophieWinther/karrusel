@@ -1,0 +1,184 @@
+---
+
+---
+
+<style>
+    /* Resetter */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Header styling */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: yellow;
+        padding: 10px 20px;
+        height: 60px;
+        position: relative;
+        z-index: 10; 
+    }
+    
+    /* Left Logo */
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo svg {
+        margin-left: 10px;
+    }
+    
+    /* Center Line */
+    .line {
+        flex-grow: 1;
+        height: 2px;
+        background-color: yellow;
+        margin: 0 20px;
+    }
+    
+    /* Ticket Icon */
+    .ticket {
+        display: flex;
+        align-items: center;
+        /* position: relative; */
+        width: 30%;
+
+    }
+    /* Hamburger Menu */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20px;
+        width: 30px;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 2px;
+        
+    }
+    
+    .hamburger span {
+        background-color: rgb(0, 0, 0);
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+    }
+    
+    /* Overlay Menu */
+    .overlay-menu {
+        position: fixed;
+        top: 0;
+        left: -100%; 
+        width: 300px;
+        height: 100vh;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        transition: left 0.3s ease-in-out;
+        z-index: 5;
+    }
+    
+    .overlay-menu.open {
+        left: 0; 
+    }
+    
+    .overlay-menu ul {
+        list-style: none;
+        margin-top: 50px;
+    }
+    
+    .overlay-menu ul li {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+    
+    .overlay-menu ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .overlay-menu ul li a:hover {
+        color: yellow;
+    }
+    
+    /* Background overlay */
+    .overlay-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 4;
+        display: none;
+    }
+    
+    .overlay-bg.show {
+        display: block; 
+    }
+    </style>
+    
+    <header class="header">
+       <!-- //Logo// -->
+        <div class="logo">
+            <span>LOGO</span>
+            <svg width="40" height="40" viewBox="0 0 24 24">
+                <!-- Indsæt din chandelier SVG her -->
+            </svg>
+        </div>
+    
+       
+        <!-- <div class="line"></div> -->
+    
+        <!-- Ticket Icon -->
+        <div class="ticket">
+            <img src="/public/header_img/ticket_gul.svg" alt="">
+        </div>
+    
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    
+    <!-- Overlay Menu -->
+    <div class="overlay-menu" id="overlay-menu">
+        <ul>
+            <li><a href="#">LINE-UP</a></li>
+            <li><a href="#">MAP</a></li>
+            <li><a href="#">TICKETS</a></li>
+        </ul>
+    </div>
+    
+    <!-- Background overlay -->
+    <div class="overlay-bg" id="overlay-bg"></div>
+    
+    
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const overlayMenu = document.getElementById('overlay-menu');
+        const overlayBg = document.getElementById('overlay-bg');
+    
+        hamburger.addEventListener('click', () => {
+            overlayMenu.classList.toggle('open');
+            overlayBg.classList.toggle('show');
+        });
+    
+        overlayBg.addEventListener('click', () => {
+            overlayMenu.classList.remove('open');
+            overlayBg.classList.remove('show');
+        });
+    </script>

@@ -1,0 +1,35 @@
+---
+const { text = "MANEGEN - THURSDAY - MANEGEN - " } = Astro.props;
+---
+
+<style>
+  .banner-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #a64dff; 
+    padding: 10px 0;
+  }
+
+  .scrolling-text {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    animation: scroll 10s linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div class="banner-container">
+  <div class="scrolling-text">{text}</div>
+</div>
+
+<!-- hej -->
