@@ -1,20 +1,55 @@
 ---
-const { text = "MANEGEN - THURSDAY - MANEGEN - " } = Astro.props;
+const { variant = "primary", text = "MANEGEN - THURSDAY - MANEGEN -" } = Astro.props;
 ---
 
+<div class={variant}>
+  <div class="scrolling-text">{text}</div>
+</div>
+
 <style>
-  .banner-container {
+  .primary {
     overflow: hidden;
     white-space: nowrap;
     background-color: #a64dff; 
     padding: 10px 0;
+   
   }
 
-  .scrolling-text {
+  .primary .scrolling-text {
     display: inline-block;
     font-size: 24px;
     font-weight: bold;
     color: white;
+    animation: scroll 10s linear infinite;
+  }
+
+  .secondary {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #fff616; 
+   
+  }
+
+  .secondary .scrolling-text {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    animation: scroll 10s linear infinite;
+  }
+
+  .tertiary {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #ffffff; 
+    padding: 10px 0;
+  }
+
+  .tertiary .scrolling-text {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
     animation: scroll 10s linear infinite;
   }
 
@@ -27,9 +62,3 @@ const { text = "MANEGEN - THURSDAY - MANEGEN - " } = Astro.props;
     }
   }
 </style>
-
-<div class="banner-container">
-  <div class="scrolling-text">{text}</div>
-</div>
-
-<!-- hej -->
