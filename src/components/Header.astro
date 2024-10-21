@@ -33,22 +33,27 @@
        
     }
     
-    .logo svg {
-        /* margin-left: 2px; */
-        align-items: flex-start;
-    }
-    
-    /* Center Line */
-   
     
     /* Ticket Icon */
     .ticket {
         display: flex;
         align-items: center;
-        /* position: relative; */
-        width: 30%;
+        position: relative;
 
     }
+
+    /* Logo */
+.logo-img {
+    width: 85px; 
+    height: auto; 
+}
+
+/* Ticket Icon */
+.ticket-img {
+    width: 70px; 
+    height: auto; 
+}
+
     /* Hamburger Menu */
     .hamburger {
             display: flex;
@@ -127,25 +132,18 @@
     </style>
     
     <header class="header">
-       <!-- //Logo// -->
+        <!-- Logo -->
         <div class="logo">
             <a href="index.astro">
-            <svg width="10" height="10" viewBox="0 0 22 22">
-                <img src="/public/logo.svg" alt="">
-            </svg>
-        </a>
+                <img src="/public/logo.svg" alt="Logo" class="logo-img">
+            </a>
         </div>
-    
-       
-        <!-- <div class="line"></div> -->
     
         <!-- Ticket Icon -->
         <div class="ticket">
             <a href="">
-            <svg width="10" height="10" viewBox="0 0 22 22">
-            <img src="/public/ticket_gul.svg" alt="">
-        </svg>
-    </a>
+                <img src="/public/ticket_gul.svg" alt="Ticket" class="ticket-img">
+            </a>
         </div>
     
         <!-- Hamburger Menu -->
