@@ -30,20 +30,16 @@
     /* Left Logo */
     .logo {
         display: flex;
-        align-items: center;
+       
     }
     
     .logo svg {
-        margin-left: 10px;
+        /* margin-left: 2px; */
+        align-items: flex-start;
     }
     
     /* Center Line */
-    .line {
-        flex-grow: 1;
-        height: 2px;
-        background-color: yellow;
-        margin: 0 20px;
-    }
+   
     
     /* Ticket Icon */
     .ticket {
@@ -133,10 +129,11 @@
     <header class="header">
        <!-- //Logo// -->
         <div class="logo">
-            <span>LOGO</span>
-            <svg width="40" height="40" viewBox="0 0 24 24">
-                <!-- Indsæt din chandelier SVG her -->
+            <a href="index.astro">
+            <svg width="10" height="10" viewBox="0 0 22 22">
+                <img src="/public/logo.svg" alt="">
             </svg>
+        </a>
         </div>
     
        
@@ -144,7 +141,11 @@
     
         <!-- Ticket Icon -->
         <div class="ticket">
-            <p>TICKET</p>
+            <a href="">
+            <svg width="10" height="10" viewBox="0 0 22 22">
+            <img src="/public/ticket_gul.svg" alt="">
+        </svg>
+    </a>
         </div>
     
         <!-- Hamburger Menu -->
