@@ -1,6 +1,6 @@
 <div class="container">
       <div class="text">
-         STAY UP TO DATE 
+         <h1>STAY UP TO DATE </h1>
       </div>
       <form action="#">
          <div class="form-row">
@@ -16,42 +16,27 @@
             </div>
          </div>
             <div class="form-row submit-btn">
-               <div class="input-data">
-                  <div class="inner"></div>
-                  <input type="submit">Sign Up
-                   
+              <button type="submit">Sign up
+            </button>
                </div>
             </div>
       </form>
       </div>
       
       <style>
-        *{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-  background: #000000;
-}
+ 
+
 .container{
   background: #FFF73B;
-  width: 100%;
-  padding: 40px 40px 40px 40px;
+ padding: 20px;
 }
 .container .text{
   text-align: left;
-  padding-left: 15px;
-  font-size: 41px;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 5px;
+  font-size: 30px;
+  font-weight: 200;
 color: #000000;
+font-family: Arial, Helvetica, sans-serif;
   
 }
 .container form{
@@ -79,6 +64,8 @@ form .form-row .textarea{
   font-size: 17px;
   border-bottom: 2px solid rgba(0,0,0, 0.12);
   background-color: #FFF73B;
+   outline: none;
+  box-sizing: border-box;
 }
 .input-data input:focus ~ label, .textarea textarea:focus ~ label,
 .input-data input:valid ~ label, .textarea textarea:valid ~ label{
@@ -96,6 +83,7 @@ form .form-row .textarea{
   bottom: 10px;
   font-size: 16px;
   transition: all 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .textarea label{
   width: 100%;
@@ -126,37 +114,24 @@ form .form-row .textarea{
   transform: scale(1);
   
 }
-.submit-btn .input-data{
-  overflow: hidden;
-  height: 40px!important;
-  width: 8%!important;
-   border-radius: 100px;
+  button {
+  background-color: #000000;
+      padding: 12px 24px;
+      border-radius: 50px;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+     
+    
+  }
+
+/* Add a hover effect for buttons */
+button:hover {
+      color: #BE56FE;
 }
-.submit-btn .input-data .inner{
-  height: 100%;
-  width: 200%;
-  position: absolute;
-  left: -100%;
-  background: #000000;
-  transition: all 0.4s;
- 
-}
-.submit-btn .input-data input {
- color: #BE56FE;
- 
-}
-.submit-btn .input-data input{
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-}
+
 </style>
 
 
