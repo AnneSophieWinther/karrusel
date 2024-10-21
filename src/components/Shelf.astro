@@ -1,0 +1,39 @@
+---
+const { variant, imgSrc, imgAlt, cardName } = Astro.props;
+import Card from './Card.astro';
+---
+
+<div class="shelf-container">
+    <Card 
+    variant="album" 
+    imgSrc="/imges/miley.jpeg" 
+    imgAlt="Artist 2" 
+    cardName="Miley album"
+
+    />
+  <Card 
+    variant="album" 
+    imgSrc="/imges/miley.jpeg" 
+    imgAlt="Artist 2" 
+    cardName="Bangerz"
+
+  />
+  <Card
+    variant="album" 
+    imgSrc="/imges/miley.jpeg" 
+    imgAlt="Artist 2" 
+    cardName="Bangerz"
+  />
+</div>
+
+<style>
+  .shelf-container {
+    margin-left: 40px;
+    padding: 40px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; /* Justerar avståndet mellan korten */
+
+  }
+  
+</style>

@@ -1,0 +1,15 @@
+---
+const { variant, imgSrc, imgAlt, cardName } = Astro.props;
+---
+
+<div>
+<img src={imgSrc} alt={imgAlt || "card"} class={variant}/>
+<p class="artist_name">{cardName}</p>
+</div>
+
+<style>
+   .artist_name {
+color: white;
+   }
+   
+</style>
