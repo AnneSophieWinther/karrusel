@@ -1,11 +1,13 @@
 ---
+const { cardTextOne, cardTextTwo, cardTextThree } = Astro.props;
+
 import Shelf from "../components/Shelf.astro";
+import Shelf2 from "../components/Shelf2.astro";
 import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 import Banner from "../components/Banner.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Footer from "../components/Footer.astro";
-
 
 
 ---
@@ -17,15 +19,34 @@ import Footer from "../components/Footer.astro";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<link rel="stylesheet" href="/src/styles/global.css">
 	</head>
 	<body>
 		<Header></Header>
-		<h1>Karrusel</h1>
+		<div class="hero">
+			<h1>
+				<span class="yellow"> IN TECHNO /</span>
+				<br>
+				WE TRUST
+			  </h1>		
+			  <img src="/imges/herobild.png" alt="hero">
+	</div>
+	<Banner></Banner>
 		<main>
-			<Button></Button>
-		<Shelf></Shelf>
-		<Banner></Banner>
+		<Shelf2 cardTextOne="LINE-UP" cardTextTwo="MAP" cardTextThree="TICKETS"></Shelf2>
+
+		<div class="gallery">
+			<img src="/imges/1.png" alt="bild1">
+			<img src="/imges/2.png" alt="bild2">
+			<img src="/imges/3.png" alt="bild3">
+			<img src="/imges/4.png" alt="bild4">
+			<img src="/imges/5.png" alt="bild5">
+			<img src="/imges/6.png" alt="bild6">
+
+		</div>
+		
 		<Newsletter></Newsletter>
+
 		<Footer></Footer>
 	</main>
 	</body>
