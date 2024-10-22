@@ -1,35 +1,70 @@
 <footer>
+    <div class="kontaktinfo">
+   <p><a href="mailto:info@nusnus.dk">info@nusnus.dk</a></p> 
+</div>
+   <div class="slogan">
   <span style="color: white;">3 DAYS OF</span>
-<span style="color: yellow;">HOUSE, DISCO</span>
+<span style="color: #FFF73B;">HOUSE, DISCO</span>
 <br>
 <span style="color: white;">&</span>
 <br>
-<span style="color: yellow;">TECHNO</span>
+<span style="color: #FFF73B;">TECHNO</span>
 <span style="color: white;">IN THE WOODS</span>
-<br>
-<div>
-<p>
-  info@nusnus.dk
-</p>
+</div>
+<div class="icon">
+    <a href="https://www.instagram.com/karruselfest/" target="_blank">
+        <img src="/public/instagram_gul.svg" alt="instagram">
+    </a>
+    <a href="https://www.facebook.com/@karruselfest" target="_blank">
+        <img src="/public/facebook_gul.svg" alt="facebook">
+    </a>
 </div>
 </footer>
 
 <style>
 footer {
-  grid-column: 1 / -1;
+  position: relative;
   background: black;
-  padding: 400px  24px 7px 15px;
-<<<<<<< HEAD
-  border-radius: 8px;
-  font-family: Helvetica;
-  font-size: 30px;
-=======
-  /* border-radius: 8px; */
-  font-family: Arial, Helvetica, sans-serif;
+    padding: 50px;
+  height: 500px;  
+ 
+  
+}
+.kontaktinfo a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+
+    position: absolute; 
+    top: 0; 
+    left: 10px; 
+    margin: 30px; 
+}
+.kontaktinfo a {
+    color: white; /* Set link text color to white */
+    text-decoration: none; /* Remove the underline */
+}
+
+.slogan {
+    font-family: Arial, Helvetica, sans-serif;
   font-weight: 200;
-  font-size: 60px;
->>>>>>> 0a62078f72ee9cc2312921be5e78ddf4c5b64526
-  color: white;
+  font-size: 70px;
+     font-weight: 200;
+    position: absolute; 
+    bottom: 0; 
+    left: 10px; 
+    margin: 20px; 
+}
+.icon{
+    position: absolute; 
+    top: 0; 
+    right: 10px; 
+    margin: 20px; 
+}
+.icon img {
+    width: 60px; /* Adjust the size of the icons */
+    height: auto; /* Maintain aspect ratio */
+    padding: 5px;
   
 }
 </style>
