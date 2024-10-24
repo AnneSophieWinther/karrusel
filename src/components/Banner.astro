@@ -1,58 +1,53 @@
 ---
-const { variant, text, img } = Astro.props;
+const { variant, text, imageSrc } = Astro.props;
 ---
 
-<div class={variant}>
-  <div class="scrolling-text">{text}</div>
+<div class={variant} style={imageSrc ? `background-image: url(${imageSrc});` : ''}>
+  {text && <div class="scrolling-text">{text}</div>}
 </div>
 
 <style>
-  .primary {
+  .primary, .secondary, .tertiary {
     overflow: hidden;
     white-space: nowrap;
-    background-color: #a64dff; 
     padding: 10px;
+    background-size: contain; /* Ændret til contain, så hele billedet vises */
+    background-repeat: repeat-x; /* Gentag billedet horisontalt */
+    background-position: 0 0; /* Start fra venstre */
+    animation: scroll-bg 20s linear infinite; /* Animer baggrunden */
+    height: 100px; /* Øg højden på banneret */
   }
 
-  .primary .scrolling-text {
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 70px;
-    font-weight: 200;
-    color: white;
-    animation: scroll 20s linear infinite;
+  .primary {
+    background-color: #a64dff;
   }
 
   .secondary {
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: #fff616; 
-  }
-
-  .secondary .scrolling-text {
-    display: inline-block;
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
-    animation: scroll 10s linear infinite;
+    background-color: #fff616;
   }
 
   .tertiary {
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: #ffffff; 
-    padding: 20px 0;
+    background-color: #ffffff;
   }
 
-  .tertiary .scrolling-text {
+  .scrolling-text {
     display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     font-weight: bold;
-    color: black;
-    animation: scroll 10s linear infinite;
+    animation: scroll-text 10s linear infinite;
   }
 
-  @keyframes scroll {
+  @keyframes scroll-bg {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -100% 0;
+    }
+  }
+
+  @keyframes scroll-text {
     from {
       transform: translateX(100%);
     }
