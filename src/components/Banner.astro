@@ -1,5 +1,5 @@
 ---
-const { variant = "primary", text = "MANEGEN - THURSDAY - MANEGEN - THURSDAY - MANEGEN - THURSDAY - MANEGEN -" } = Astro.props;
+const { variant, text, img } = Astro.props;
 ---
 
 <div class={variant}>
@@ -12,7 +12,6 @@ const { variant = "primary", text = "MANEGEN - THURSDAY - MANEGEN - THURSDAY - M
     white-space: nowrap;
     background-color: #a64dff; 
     padding: 10px;
-   
   }
 
   .primary .scrolling-text {
@@ -28,7 +27,6 @@ const { variant = "primary", text = "MANEGEN - THURSDAY - MANEGEN - THURSDAY - M
     overflow: hidden;
     white-space: nowrap;
     background-color: #fff616; 
-   
   }
 
   .secondary .scrolling-text {
