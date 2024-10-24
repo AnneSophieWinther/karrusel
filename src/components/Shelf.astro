@@ -1,5 +1,5 @@
 ---
-const { variant, imgPath, imgAlt, cardName, cardClass } = Astro.props;
+const { variant, imgPath, imgAlt, cardName, cardClass, cardTextOne, cardTextTwo, cardTextThree } = Astro.props;
 import Card from './Card.astro';
 ---
 
@@ -7,8 +7,8 @@ import Card from './Card.astro';
     <Card 
     imgPath="/imges/karrusel.jpeg" 
     imgAlt="Artist 2" 
-    cardName="Miley album"
-    cardText = About
+    cardTextOne={cardTextOne}
+    cardName = "More info"
     variant = primary
     cardClass = white
 
@@ -18,8 +18,8 @@ import Card from './Card.astro';
   <Card 
     imgPath="/imges/karrusel.jpeg" 
     imgAlt="Artist 2" 
-    cardName="Bangerz"
-    cardText = About
+    cardTextTwo={cardTextTwo}
+    cardName = "More info"
     variant = primary
     cardClass = white
 
@@ -29,9 +29,9 @@ import Card from './Card.astro';
   <Card
     imgPath="/imges/karrusel.jpeg" 
     imgAlt="Artist 2" 
-    cardName="Bangerz"
-    cardText = About
-    variant = primary
+    cardTextThree={cardTextThree}
+    cardName = "More info"
+    variant = secondary
     cardClass = white
 
   />
@@ -43,8 +43,17 @@ import Card from './Card.astro';
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px; /* Justerar avståndet mellan korten */
-
   }
+
+
+    @media screen and (max-width: 1100px) {
+    .shelf-container {
+      padding: 40px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    }
+}
 
   
 </style>

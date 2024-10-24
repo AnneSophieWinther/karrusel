@@ -1,14 +1,14 @@
 ---
-const { variant, imgPath, imgAlt, cardName, cardClass } = Astro.props;
+const { variant, imgPath, imgAlt, cardName, cardClass, cardTextOne, cardTextTwo, cardTextThree } = Astro.props;
 import Card from './Card.astro';
 ---
 
 <div class="shelf-container2">
     <Card 
-    imgPath="/imges/karrusel.jpeg" 
+    imgPath="/imges/lineup.png" 
     imgAlt="Artist 2" 
-    cardName="Miley album"
-    cardText = About
+    cardTextOne={cardTextOne}
+    cardName = "More info"
     variant = secondary
     cardClass = black
  
@@ -16,10 +16,10 @@ import Card from './Card.astro';
 
     />
   <Card 
-    imgPath="/imges/karrusel.jpeg" 
+    imgPath="/imges/map.png" 
     imgAlt="Artist 2" 
-    cardName="Bangerz"
-    cardText = About
+    cardTextTwo={cardTextTwo}
+    cardName = "More info"
     variant = secondary
     cardClass = black
 
@@ -27,10 +27,10 @@ import Card from './Card.astro';
 
   />
   <Card
-    imgPath="/imges/karrusel.jpeg" 
+    imgPath="/imges/tickets.png" 
     imgAlt="Artist 2" 
-    cardName="Bangerz"
-    cardText = About
+    cardTextThree={cardTextThree}
+    cardName = "More info"
     variant = secondary
     cardClass = black
 
@@ -46,6 +46,14 @@ import Card from './Card.astro';
     background-color: black;
 
   }
+
+  @media screen and (max-width: 1100px) {
+    .shelf-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    }
+}
 
   
 </style>

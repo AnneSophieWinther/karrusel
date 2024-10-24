@@ -1,5 +1,5 @@
 ---
-const { imgPath, cardName, cardText, variant, cardClass } = Astro.props;
+const { imgPath, cardName, cardText, variant, cardClass, cardTextOne, cardTextTwo, cardTextThree } = Astro.props;
 import Button from "../components/Button.astro";
 
 ---
@@ -7,9 +7,10 @@ import Button from "../components/Button.astro";
 <li data-variant={cardClass}>
 <img src={imgPath} alt="Kunstnerbild" height="460" width="430"/>
 <h3>
-   {cardName}
+   {cardTextOne} {cardTextTwo} {cardTextThree}
  </h3>
- <p>{cardText}</p>
+ <p>{cardName}</p>
+ <br>
  <Button variant={variant}>Read more</Button>
 </li>
 
@@ -20,7 +21,7 @@ color: rgb(0, 0, 0);
 width: 390px;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 1.4rem;
-font-weight: normal;
+font-weight: 200;
 background-color: white;
    }
 
@@ -29,13 +30,20 @@ color: rgb(255, 255, 255);
 width: 390px;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 1.4rem;
-font-weight: normal;
+font-weight: 200;
 background-color: black;
    }
    
    li {
   list-style-type: none;
 }
+
+@media screen and (max-width: 768px) {
+    li {
+      max-width: 200px;
+    }
+}
+
 
    
 </style>
