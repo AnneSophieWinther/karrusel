@@ -6,6 +6,17 @@ import Header from "../components/Header.astro";
 import Banner from "../components/Banner.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Footer from "../components/Footer.astro";
+import Testcard from "../components/Testcard.astro";
+import Card from "../components/Card.astro";
+
+const data = await fetch("https://rsghkgjbdnablmjgywlg.supabase.co/rest/v1/artists",{
+	method: "GET",
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzZ2hrZ2piZG5hYmxtamd5d2xnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1MDY5MTksImV4cCI6MjA0NTA4MjkxOX0.ZDdicHtFLTrNwvGDB0a74PXZxG9VGWTfa_SUmbTiwTk"
+	}
+}).then(res=>res.json());
+
+
 
 
 ---
@@ -24,15 +35,31 @@ import Footer from "../components/Footer.astro";
 		<main>
             <Button></Button>
             <Banner></Banner>
-		<Shelf></Shelf>
+		<section class="shelf">
+			{data.map(show=>{
+return <Testcard data={show}     variant = primary
+ />
+			})}
+			
+		</section>
 		<Banner></Banner>
-        <Shelf2></Shelf2>
-        <Banner></Banner>
-		<Shelf></Shelf>
-		<Banner></Banner>
-        <Shelf2></Shelf2>
 		<Newsletter></Newsletter>
 		<Footer></Footer>
+		<section class="shelf">
+			{data.map(show=>{
+return <Testcard data={show}     variant = primary
+ />
+			})}
+			
+		</section>
+		
+		<style>
+			.shelf {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+		</style>
+		
 	</main>
 	</body>
 </html>

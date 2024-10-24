@@ -1,5 +1,5 @@
 ---
-const { variant, imgPath, imgAlt, cardName, cardClass, cardTextOne, cardTextTwo, cardTextThree } = Astro.props;
+const { data, variant, imgPath, imgAlt, cardName, cardClass, cardTextOne, cardTextTwo, cardTextThree } = Astro.props;
 import Card from './Card.astro';
 ---
 
@@ -16,12 +16,7 @@ import Card from './Card.astro';
 
     />
   <Card 
-    imgPath="/imges/karrusel.jpeg" 
-    imgAlt="Artist 2" 
-    cardTextTwo={cardTextTwo}
-    cardName = "More info"
-    variant = primary
-    cardClass = white
+   
 
 
 

@@ -1,12 +1,15 @@
 ---
-const { variant } = Astro.props;
+const { variant, link } = Astro.props;
 ---
 
-<button data-variant={variant}>
+<a href={link} data-variant={variant}>
   <slot />
-</button>
+</a>
 
 <style>
+  a {
+    text-decoration: none;
+  }
      [data-variant="primary"] {
       background-color: #FFF616;
       padding: 12px 24px;

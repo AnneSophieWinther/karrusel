@@ -1,0 +1,14 @@
+---
+const{ data, imgPath, variant } = Astro.props;
+console.log(data);
+import Button from "../components/Button.astro";
+---
+
+<article>
+    <img src={data.image_url} alt="Kunstnerbild" height="460" width="430"/>
+    <h2>{data.name}</h2>
+    <p>{data.genre}</p>
+    <br>
+ <Button variant={variant} link={data.id}>Read more</Button>
+</article>
+

@@ -1,0 +1,54 @@
+---
+// @ts-nocheck
+import Shelf from "../components/Shelf.astro";
+import Button from "../components/Button.astro";
+import Header from "../components/Header.astro";
+import Banner from "../components/Banner.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const url = "https://rsghkgjbdnablmjgywlg.supabase.co/rest/v1/artists"
+  const options = {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJzZ2hrZ2piZG5hYmxtamd5d2xnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk1MDY5MTksImV4cCI6MjA0NTA4MjkxOX0.ZDdicHtFLTrNwvGDB0a74PXZxG9VGWTfa_SUmbTiwTk"
+    }
+  }
+  
+  const data = await fetch(url, options).then(res=>res.json())
+  
+  return data.map(artist => ({
+      params: { id: artist.id }, // [artist]=artist.slug
+      props: { artist } // send al data med som props
+    }))
+}
+const { artist } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Header></Header>
+		 <img src={artist.image_url} alt="Kunstnerbild"/>
+		<h1>{artist.name}</h1>
+		<h3>{artist.stage}</h3>
+		<h3>{artist.date}</h3>
+		<h3>{artist.genre}</h3>
+		<p>{artist.bio}</p>
+		<main>
+			<Button></Button>
+		<Newsletter></Newsletter>
+		<Footer></Footer>
+	</main>
+	</body>
+</html>
+
+<style>
+
+</style>
