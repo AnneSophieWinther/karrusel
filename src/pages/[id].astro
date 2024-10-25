@@ -31,12 +31,15 @@ const { artist } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="/src/styles/global.css">
 		<title>Astro</title>
 	</head>
 	<body>
 		<Header></Header>
+		<div class="hero">
 		 <img src={artist.image_url} alt="Kunstnerbild"/>
 		<h1>{artist.name}</h1>
+		</div>
 		<h3>{artist.stage}</h3>
 		<h3>{artist.date}</h3>
 		<h3>{artist.genre}</h3>
